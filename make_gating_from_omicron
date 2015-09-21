@@ -1,0 +1,69 @@
+#! /usr/bin/env python
+import sys
+from glue import lal
+from gwpy.table.lsctables import SnglBurstTable, SegmentTable
+from gwpy.segments import DataQualityFlag, Segment, SegmentList
+import numpy
+import argparse
+
+dqsegdb_url = "https://segments.ligo.org"
+
+parser = argparse.ArgumentParser(description='Make a PyCBC gating file from Omicron triggers.')
+parser.add_argument('-i','--ifo', type=str, help='IFO', required=True)
+parser.add_argument('-s','--start', type=int, help='GPS start time.', required=True)
+parser.add_argument('-e','--end', type=int, help='GPS end time', required=True)
+parser.add_argument('-m','--min-snr', type=int, help='Min SNR cut', default=300)
+parser.add_argument('-z','--zeros', type=float, help='Half-width of zeros in window (sec)', default=0.25)
+parser.add_argument('-p','--pad', type=float, help='Width of padding (sec)', default=0.25)
+parser.add_argument('-c','--cache-file', type=str, help='Cache file contaiing omicron triggers', required=True)
+parser.add_argument('-v','--verbose', help='verbose', action='store_true', default=False)
+
+args = parser.parse_args()
+
+hoft_channel = '%s:GDS-CALIB_STRAIN' % args.ifo
+sci_flag = '%s:DMT-ANALYSIS_READY:1' % args.ifo
+exclude_flag = '%s:DCH-MISSING_%s_HOFT_C00:2' % (args.ifo, args.ifo)
+
+requested_segs = SegmentList([Segment(args.start, args.end)])
+if args.verbose: print >> sys.stdout, "querying %s from %s" % (sci_flag,dqsegdb_url)
+sci_segs = DataQualityFlag.query_dqsegdb(sci_flag, args.start, args.end, url=dqsegdb_url)
+if args.verbose: print >> sys.stdout, "querying %s from %s" % (exclude_flag,dqsegdb_url)
+exclude_segs = DataQualityFlag.query_dqsegdb(exclude_flag, args.start, args.end, url=dqsegdb_url)
+
+needed_segs = sci_segs.active - exclude_segs.active
+
+# Loop through each 
+trigs_lst = []
+omicron_segs = SegmentList()
+
+# build a cache from from command line
+file_cache = lal.Cache.fromfilenames([args.cache_file])
+needed_files = file_cache.sieve(segmentlist=needed_segs)
+
+# loop over the files in the cache
+for pfn in needed_files.pfnlist():
+
+    if args.verbose: print >> sys.stdout, pfn
+
+    # read in the segments from the omicron files
+    segments_covered = SegmentTable.read(pfn)
+    for i in segments_covered:
+        new_segment_covered=Segment(i.start_time,i.end_time)
+        new_segment_covered=Segment(i.start_time,i.end_time)
+
+    trigs = SnglBurstTable.read(pfn)
+
+    trigs_lst.extend([float(trig.get_peak())
+                     for trig in trigs
+                     if trig.snr > args.min_snr])
+
+print needed_segs - omicron_segs
+
+output_fname = '%s-gating_SNR%u-%u-%u.txt' % (args.ifo, args.min_snr, args.start, args.end-args.start)
+fout = open(output_fname,'w')
+
+fout.write('\n'.join(['%10.4f %.4f %.4f' % (x, args.zeros, args.pad)
+                        for x in trigs_lst]))
+fout.write('\n')
+fout.close()
+
