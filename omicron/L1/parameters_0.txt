@@ -1,0 +1,26 @@
+// ------------------------------------------------------------------
+// Omicron (v2r1) option file generated on Mon Sep 21 08:00:49 CDT 2015
+// Configuration type = GW
+// ------------------------------------------------------------------
+
+DATA       FFL              /home/samantha.usman/aligo/er8b/omicron/L1/frames.lcf
+DATA       CHANNELS         L1:GDS-CALIB_STRAIN
+DATA       SAMPLEFREQUENCY  8192
+
+PARAMETER  CHUNKDURATION    544
+PARAMETER  SEGMENTDURATION  64
+PARAMETER  OVERLAPDURATION  4
+PARAMETER  QRANGE           3.3166  100.0
+PARAMETER  FREQUENCYRANGE   32  4096
+PARAMETER  MISMATCHMAX      0.2
+PARAMETER  SNRTHRESHOLD     5
+
+OUTPUT     PRODUCTS         triggers
+OUTPUT     VERBOSITY        0
+OUTPUT     FORMAT           rootxml
+
+// clustering is only applied to XML
+PARAMETER  CLUSTERING       TIME
+
+
+OUTPUT  DIRECTORY  /home/samantha.usman/aligo/er8b/omicron/L1/triggers

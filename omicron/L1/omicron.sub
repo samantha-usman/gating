@@ -1,0 +1,10 @@
+universe = vanilla
+executable = /home/detchar/opt/virgosoft/Omicron/v2r1/Linux-x86_64/omicron.exe
+arguments = "$(in_segments) $(in_parameters)"
+accounting_group = ligo.prod.o1.cbc.bbh.pycbcoffline
+getenv = True
+log = /usr1/samantha.usman/omicron.log
+error = logs/omicron-$(cluster)-$(process).err
+output = logs/omicron-$(cluster)-$(process).out
+notification = never
+queue 1
