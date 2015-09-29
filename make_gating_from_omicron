@@ -30,7 +30,12 @@ sci_segs = DataQualityFlag.query_dqsegdb(sci_flag, args.start, args.end, url=dqs
 if args.verbose: print >> sys.stdout, "querying %s from %s" % (exclude_flag,dqsegdb_url)
 exclude_segs = DataQualityFlag.query_dqsegdb(exclude_flag, args.start, args.end, url=dqsegdb_url)
 
-needed_segs = sci_segs.active - exclude_segs.active
+input_segs = sci_segs.active - exclude_segs.active
+needed_segs = SegmentList()
+
+# strip of the two seconds that omicron discards
+for i in input_segs:
+    needed_segs.append( Segment( i[0] + 2, i[1] - 2) )
 
 # Loop through each 
 trigs_lst = []
@@ -38,21 +43,21 @@ omicron_segs = SegmentList()
 
 # build a cache from from command line
 file_cache = lal.Cache.fromfilenames([args.cache_file])
-needed_files = file_cache.sieve(segmentlist=needed_segs)
 
 # loop over the files in the cache
-for pfn in needed_files.pfnlist():
+for pfn in file_cache.pfnlist():
 
     if args.verbose: print >> sys.stdout, pfn
 
     # read in the segments from the omicron files
-    segments_covered = SegmentTable.read(pfn)
-    for i in segments_covered:
-        new_segment_covered=Segment(i.start_time,i.end_time)
-        new_segment_covered=Segment(i.start_time,i.end_time)
+    segs = SegmentTable.read(pfn)
+    for i in segs:
+       omicron_segs.append(Segment(i.start_time,i.end_time))
 
+    # read in the triggers from the omicron files
     trigs = SnglBurstTable.read(pfn)
 
+    # make gates
     trigs_lst.extend([float(trig.get_peak())
                      for trig in trigs
                      if trig.snr > args.min_snr])

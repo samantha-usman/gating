@@ -1,3 +1,5 @@
+JOB omicron_seg1_par00 omicron.sub
+VARS omicron_seg1_par00 initialdir="/home/samantha.usman/aligo/er8b/omicron/H1" in_segments="/home/samantha.usman/aligo/er8b/omicron/segments/H1_segment_0000.txt" in_parameters="/home/samantha.usman/aligo/er8b/omicron/H1/parameters_0.txt"
 JOB omicron_seg1_par0 omicron.sub
 VARS omicron_seg1_par0 initialdir="/home/samantha.usman/aligo/er8b/omicron/H1" in_segments="/home/samantha.usman/aligo/er8b/omicron/segments/H1_segment_0001.txt" in_parameters="/home/samantha.usman/aligo/er8b/omicron/H1/parameters_0.txt"
 JOB omicron_seg2_par0 omicron.sub
