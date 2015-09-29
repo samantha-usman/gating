@@ -7,8 +7,8 @@ counter = 1
 
 #Loading .txt file containing start and end times for data segments
 segment_files = {}
-segment_files['H1'] = np.genfromtxt("/home/samantha.usman/aligo/er8b/omicron/segments/L1-SEGMENTS.txt", dtype = int)
-segment_files['L1'] = np.genfromtxt("/home/samantha.usman/aligo/er8b/omicron/segments/H1-SEGMENTS.txt", dtype = int)
+segment_files['H1'] = np.genfromtxt("/home/samantha.usman/aligo/er8b/omicron/segments/H1-SEGMENTS.txt", dtype = int)
+segment_files['L1'] = np.genfromtxt("/home/samantha.usman/aligo/er8b/omicron/segments/L1-SEGMENTS.txt", dtype = int)
 
 for ifo in segment_files.keys():
         #Looping over segment start end times

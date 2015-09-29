@@ -94,39 +94,3 @@ JOB omicron_seg47_par0 omicron.sub
 VARS omicron_seg47_par0 initialdir="/home/samantha.usman/aligo/er8b/omicron/H1" in_segments="/home/samantha.usman/aligo/er8b/omicron/segments/H1_segment_0047.txt" in_parameters="/home/samantha.usman/aligo/er8b/omicron/H1/parameters_0.txt"
 JOB omicron_seg48_par0 omicron.sub
 VARS omicron_seg48_par0 initialdir="/home/samantha.usman/aligo/er8b/omicron/H1" in_segments="/home/samantha.usman/aligo/er8b/omicron/segments/H1_segment_0048.txt" in_parameters="/home/samantha.usman/aligo/er8b/omicron/H1/parameters_0.txt"
-JOB omicron_seg49_par0 omicron.sub
-VARS omicron_seg49_par0 initialdir="/home/samantha.usman/aligo/er8b/omicron/H1" in_segments="/home/samantha.usman/aligo/er8b/omicron/segments/H1_segment_0049.txt" in_parameters="/home/samantha.usman/aligo/er8b/omicron/H1/parameters_0.txt"
-JOB omicron_seg50_par0 omicron.sub
-VARS omicron_seg50_par0 initialdir="/home/samantha.usman/aligo/er8b/omicron/H1" in_segments="/home/samantha.usman/aligo/er8b/omicron/segments/H1_segment_0050.txt" in_parameters="/home/samantha.usman/aligo/er8b/omicron/H1/parameters_0.txt"
-JOB omicron_seg51_par0 omicron.sub
-VARS omicron_seg51_par0 initialdir="/home/samantha.usman/aligo/er8b/omicron/H1" in_segments="/home/samantha.usman/aligo/er8b/omicron/segments/H1_segment_0051.txt" in_parameters="/home/samantha.usman/aligo/er8b/omicron/H1/parameters_0.txt"
-JOB omicron_seg52_par0 omicron.sub
-VARS omicron_seg52_par0 initialdir="/home/samantha.usman/aligo/er8b/omicron/H1" in_segments="/home/samantha.usman/aligo/er8b/omicron/segments/H1_segment_0052.txt" in_parameters="/home/samantha.usman/aligo/er8b/omicron/H1/parameters_0.txt"
-JOB omicron_seg53_par0 omicron.sub
-VARS omicron_seg53_par0 initialdir="/home/samantha.usman/aligo/er8b/omicron/H1" in_segments="/home/samantha.usman/aligo/er8b/omicron/segments/H1_segment_0053.txt" in_parameters="/home/samantha.usman/aligo/er8b/omicron/H1/parameters_0.txt"
-JOB omicron_seg54_par0 omicron.sub
-VARS omicron_seg54_par0 initialdir="/home/samantha.usman/aligo/er8b/omicron/H1" in_segments="/home/samantha.usman/aligo/er8b/omicron/segments/H1_segment_0054.txt" in_parameters="/home/samantha.usman/aligo/er8b/omicron/H1/parameters_0.txt"
-JOB omicron_seg55_par0 omicron.sub
-VARS omicron_seg55_par0 initialdir="/home/samantha.usman/aligo/er8b/omicron/H1" in_segments="/home/samantha.usman/aligo/er8b/omicron/segments/H1_segment_0055.txt" in_parameters="/home/samantha.usman/aligo/er8b/omicron/H1/parameters_0.txt"
-JOB omicron_seg56_par0 omicron.sub
-VARS omicron_seg56_par0 initialdir="/home/samantha.usman/aligo/er8b/omicron/H1" in_segments="/home/samantha.usman/aligo/er8b/omicron/segments/H1_segment_0056.txt" in_parameters="/home/samantha.usman/aligo/er8b/omicron/H1/parameters_0.txt"
-JOB omicron_seg57_par0 omicron.sub
-VARS omicron_seg57_par0 initialdir="/home/samantha.usman/aligo/er8b/omicron/H1" in_segments="/home/samantha.usman/aligo/er8b/omicron/segments/H1_segment_0057.txt" in_parameters="/home/samantha.usman/aligo/er8b/omicron/H1/parameters_0.txt"
-JOB omicron_seg58_par0 omicron.sub
-VARS omicron_seg58_par0 initialdir="/home/samantha.usman/aligo/er8b/omicron/H1" in_segments="/home/samantha.usman/aligo/er8b/omicron/segments/H1_segment_0058.txt" in_parameters="/home/samantha.usman/aligo/er8b/omicron/H1/parameters_0.txt"
-JOB omicron_seg59_par0 omicron.sub
-VARS omicron_seg59_par0 initialdir="/home/samantha.usman/aligo/er8b/omicron/H1" in_segments="/home/samantha.usman/aligo/er8b/omicron/segments/H1_segment_0059.txt" in_parameters="/home/samantha.usman/aligo/er8b/omicron/H1/parameters_0.txt"
-JOB omicron_seg60_par0 omicron.sub
-VARS omicron_seg60_par0 initialdir="/home/samantha.usman/aligo/er8b/omicron/H1" in_segments="/home/samantha.usman/aligo/er8b/omicron/segments/H1_segment_0060.txt" in_parameters="/home/samantha.usman/aligo/er8b/omicron/H1/parameters_0.txt"
-JOB omicron_seg61_par0 omicron.sub
-VARS omicron_seg61_par0 initialdir="/home/samantha.usman/aligo/er8b/omicron/H1" in_segments="/home/samantha.usman/aligo/er8b/omicron/segments/H1_segment_0061.txt" in_parameters="/home/samantha.usman/aligo/er8b/omicron/H1/parameters_0.txt"
-JOB omicron_seg62_par0 omicron.sub
-VARS omicron_seg62_par0 initialdir="/home/samantha.usman/aligo/er8b/omicron/H1" in_segments="/home/samantha.usman/aligo/er8b/omicron/segments/H1_segment_0062.txt" in_parameters="/home/samantha.usman/aligo/er8b/omicron/H1/parameters_0.txt"
-JOB omicron_seg63_par0 omicron.sub
-VARS omicron_seg63_par0 initialdir="/home/samantha.usman/aligo/er8b/omicron/H1" in_segments="/home/samantha.usman/aligo/er8b/omicron/segments/H1_segment_0063.txt" in_parameters="/home/samantha.usman/aligo/er8b/omicron/H1/parameters_0.txt"
-JOB omicron_seg64_par0 omicron.sub
-VARS omicron_seg64_par0 initialdir="/home/samantha.usman/aligo/er8b/omicron/H1" in_segments="/home/samantha.usman/aligo/er8b/omicron/segments/H1_segment_0064.txt" in_parameters="/home/samantha.usman/aligo/er8b/omicron/H1/parameters_0.txt"
-JOB omicron_seg65_par0 omicron.sub
-VARS omicron_seg65_par0 initialdir="/home/samantha.usman/aligo/er8b/omicron/H1" in_segments="/home/samantha.usman/aligo/er8b/omicron/segments/H1_segment_0065.txt" in_parameters="/home/samantha.usman/aligo/er8b/omicron/H1/parameters_0.txt"
-JOB omicron_seg66_par0 omicron.sub
-VARS omicron_seg66_par0 initialdir="/home/samantha.usman/aligo/er8b/omicron/H1" in_segments="/home/samantha.usman/aligo/er8b/omicron/segments/H1_segment_0066.txt" in_parameters="/home/samantha.usman/aligo/er8b/omicron/H1/parameters_0.txt"
